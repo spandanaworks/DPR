@@ -1,0 +1,59 @@
+/* Layout */
+.dpr-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  color: #adb5bd;
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  display: block;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+  background-color: #495057;
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+/* Form Sections */
+.dpr-section {
+  display: block;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+input, textarea, select {
+  border-radius: 5px;
+}
+
+button {
+  border-radius: 5px;
+}
+
+/* Progress bar */
+.progress {
+  height: 20px;
+}

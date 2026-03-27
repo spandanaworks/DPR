@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DPR Generator</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="dpr-container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <h4 class="text-center mb-3">📄 DPR Generator</h4>
+    <ul class="nav flex-column" id="sidebar-nav">
+      <li class="nav-item"><a class="nav-link active" href="#section1">1. Basic Info</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section2">2. Members</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section3">3. Product</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section4">4. Machinery</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section5">5. Market</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section6">6. Work Distribution</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section7">7. Financials</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section8">8. Projections</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section9">9. Infrastructure</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section10">10. SWOT</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section11">11. Social Impact</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section12">12. Documents</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section13">13. KYC</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section14">14. Credit History</a></li>
+      <li class="nav-item"><a class="nav-link" href="#section15">15. Declaration</a></li>
+    </ul>
+  </nav>
+
+ <!-- Main Content -->
+  <main class="content">
+    <div class="progress mb-3">
+      <div class="progress-bar" id="progress-bar" style="width:0%">Step 1/15</div>
+    </div>
+
+    <form id="dpr-form">
+      
+      <!-- SECTION 1: Basic Info -->
+      <div id="section1" class="dpr-section">
+        <h5>1. Basic Information</h5>
+        <input type="text" name="business_name" placeholder="Name of the proposed business unit" class="form-control mb-2">
+        <textarea name="business_desc" placeholder="Brief description of the business" class="form-control mb-2"></textarea>
+        <input type="text" name="group_name" placeholder="Name of the group/organization" class="form-control mb-2">
+        <select class="form-select mb-2" name="entity_type">
+          <option>JLG</option>
+          <option>SHG</option>
+          <option>Partnership</option>
+          <option>Proprietorship</option>
+          <option>Pvt Ltd</option>
+          <option>Others</option>
+        </select>
+        <input type="number" name="total_members" placeholder="Total number of members/partners" class="form-control mb-2">
+        <input type="text" name="village" placeholder="Name of village/town" class="form-control mb-2">
+        <input type="text" name="block" placeholder="Name of block/taluk" class="form-control mb-2">
+        <input type="text" name="district" placeholder="Name of district" class="form-control mb-2">
+        <input type="text" name="state" placeholder="State" class="form-control mb-2">
+        <input type="text" name="contact_name" placeholder="Contact person name" class="form-control mb-2">
+        <input type="text" name="contact_number" placeholder="Contact number" class="form-control mb-2">
+        <input type="email" name="email" placeholder="Email address (optional)" class="form-control mb-2">
+        <input type="text" name="bank_name" placeholder="Bank name" class="form-control mb-2">
+        <input type="text" name="bank_branch" placeholder="Bank branch" class="form-control mb-2">
+        <input type="text" name="account_number" placeholder="Account number" class="form-control mb-2">
+        <input type="text" name="ifsc" placeholder="IFSC code" class="form-control mb-2">
+        <button type="button" class="btn btn-primary next-btn">Next</button>
+      </div>
+
+      <!-- SECTION 2: Members -->
+<div id="section2" class="dpr-section" style="display:none;">
+  <h5>2. Member Details</h5>
+  
+  <table class="table table-bordered" id="members-table">
+    <thead class="table-light">
+      <tr>
+        <th>#</th>
+        <th>Full Name</th>
+        <th>Role / Designation</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Educational Qualification</th>
+        <th>ID Proof Type</th>
+        <th>ID Proof Number</th>
+        <th>Mobile Number</th>
+        <th>Upload Photo</th>
+        <th>Upload ID Proof</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="members-container">
+      <!-- Member rows will be added dynamically here -->
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-secondary mb-2" id="add-member">Add Member</button>
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 3: Product/Service Details -->
+<div id="section3" class="dpr-section" style="display:none;">
+  <h5>3. Product/Service Details</h5>
+
+  <div class="mb-2">
+    <label>3.1 Primary product or service</label>
+    <textarea class="form-control" placeholder="Describe your primary product or service"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>3.2 Daily production/service capacity</label>
+    <input type="number" class="form-control" placeholder="Daily production/service capacity">
+  </div>
+
+  <div class="mb-2">
+    <label>3.3 Unit of capacity</label>
+    <select class="form-select">
+      <option>kg</option>
+      <option>liters</option>
+      <option>pieces</option>
+      <option>units</option>
+      <option>hours</option>
+      <option>customers</option>
+      <option>others</option>
+    </select>
+  </div>
+
+  <div class="mb-2">
+    <label>3.4 If others, please specify</label>
+    <input type="text" class="form-control" placeholder="Specify unit if others">
+  </div>
+
+  <div class="mb-2">
+    <label>3.5 Key inputs/raw materials</label>
+    <textarea class="form-control" placeholder="List key inputs/raw materials required"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>3.6 Average cost of input (per unit)</label>
+    <input type="number" class="form-control" placeholder="Average cost of input">
+  </div>
+
+  <div class="mb-2">
+    <label>3.7 Unit for input cost</label>
+    <select class="form-select">
+      <option>per kg</option>
+      <option>per liter</option>
+      <option>per piece</option>
+      <option>per unit</option>
+      <option>per hour</option>
+      <option>others</option>
+    </select>
+  </div>
+
+  <div class="mb-2">
+    <label>3.8 Average selling price (per unit)</label>
+    <input type="number" class="form-control" placeholder="Average selling price per unit">
+  </div>
+
+  <div class="mb-2">
+    <label>3.9 Unit for selling price</label>
+    <select class="form-select">
+      <option>per kg</option>
+      <option>per liter</option>
+      <option>per piece</option>
+      <option>per unit</option>
+      <option>per hour</option>
+      <option>others</option>
+    </select>
+  </div>
+
+  <div class="mb-2">
+    <label>3.10 Number of working days per year</label>
+    <input type="number" class="form-control" placeholder="Number of working days per year">
+  </div>
+
+  <div class="mb-2">
+    <label>3.11 Number of working hours per day</label>
+    <input type="number" class="form-control" placeholder="Number of working hours per day">
+  </div>
+
+  <div class="mb-2">
+    <label>3.12 Does your business have seasonal variation?</label><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="seasonal" value="yes">
+      <label class="form-check-label">Yes</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="seasonal" value="no">
+      <label class="form-check-label">No</label>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>3.13 If yes, how many off-season days?</label>
+    <input type="number" class="form-control" placeholder="Number of off-season days">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+
+<!-- SECTION 4: Machinery & Equipment -->
+<div id="section4" class="dpr-section" style="display:none;">
+  <h5>4. Machinery & Equipment</h5>
+
+  <div class="mb-2">
+    <label>4.1 List the main machinery/equipment required</label>
+    <textarea class="form-control" placeholder="List the main machinery/equipment required"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>4.2 Name of supplier/vendor</label>
+    <input type="text" class="form-control" placeholder="Supplier or vendor name">
+  </div>
+
+  <div class="mb-2">
+    <label>4.3 Supplier location</label>
+    <input type="text" class="form-control" placeholder="Supplier location">
+  </div>
+
+  <div class="mb-2">
+    <label>4.4 Is the machinery available locally?</label><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="machinery_local" value="yes">
+      <label class="form-check-label">Yes</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="machinery_local" value="no">
+      <label class="form-check-label">No</label>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <label>4.5 Upload machinery specification/quotation</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 5: Market Information -->
+<div id="section5" class="dpr-section" style="display:none;">
+  <h5>5. Market Information</h5>
+
+  <div class="mb-2">
+    <label>5.1 Who are your target customers?</label>
+    <textarea class="form-control" placeholder="Describe your target customers"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>5.2 Where will you sell your product/service?</label>
+    <textarea class="form-control" placeholder="Location/market where your product/service will be sold"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>5.3 Who are your main competitors?</label>
+    <textarea class="form-control" placeholder="List your main competitors"></textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>5.4 What makes your product/service unique?</label>
+    <textarea class="form-control" placeholder="Describe your unique selling points"></textarea>
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 6: Work Distribution -->
+<div id="section6" class="dpr-section" style="display:none;">
+  <h5>6. Work Distribution</h5>
+
+  <div class="mb-2">
+    <label>6.1 Procurement / Sourcing</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.2 Production / Operations</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.3 Sales / Marketing</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.4 Logistics / Delivery</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.5 Quality control</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.6 Administration / Accounts</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.7 Maintenance</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.8 Waste management</label>
+    <input type="number" class="form-control" placeholder="Number of persons">
+  </div>
+
+  <div class="mb-2">
+    <label>6.9 Others (specify)</label>
+    <input type="text" class="form-control" placeholder="Specify other roles">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 7: Financial Estimates -->
+<div id="section7" class="dpr-section" style="display:none;">
+  <h5>7. Financial Estimates</h5>
+
+  <!-- Project Cost -->
+  <div class="mb-2">
+    <label>7.1 Machinery and equipment</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.2 Furniture and fixtures</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.3 Vehicles (if any)</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.4 Building/shed deposit</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.5 Electricity/utility deposit</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.6 License and registration fees</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.7 Initial raw material stock</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.8 Other preoperative expenses</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label><strong>Total Project Cost</strong></label>
+    <input type="number" class="form-control" placeholder="Auto-calculated" readonly>
+  </div>
+
+  <!-- Source of Funds -->
+  <div class="mb-2">
+    <label>7.9 Bank loan required</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.10 Own contribution</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label>7.11 Subsidy/grant (if any)</label>
+    <input type="number" class="form-control" placeholder="Amount (Rs.)">
+  </div>
+
+  <div class="mb-2">
+    <label><strong>Total Funds</strong></label>
+    <input type="number" class="form-control" placeholder="Auto-calculated" readonly>
+  </div>
+
+  <!-- Loan Details -->
+  <div class="mb-2">
+    <label>7.12 Expected interest rate (%)</label>
+    <input type="number" class="form-control" placeholder="Interest rate">
+  </div>
+
+  <div class="mb-2">
+    <label>7.13 Loan repayment period (years)</label>
+    <input type="number" class="form-control" placeholder="Years">
+  </div>
+
+  <div class="mb-2">
+    <label>7.14 Loan moratorium/grace period (months)</label>
+    <input type="number" class="form-control" placeholder="Months">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 8: Annual Projections -->
+<div id="section8" class="dpr-section" style="display:none;">
+  <h5>8. Annual Projections (Year 1–Year 5)</h5>
+
+  <!-- Capacity Utilization -->
+  <div class="mb-2">
+    <label>8.1 Capacity utilization (%)</label>
+    <input type="number" class="form-control mb-1" placeholder="Year 1">
+    <input type="number" class="form-control mb-1" placeholder="Year 2">
+    <input type="number" class="form-control mb-1" placeholder="Year 3">
+    <input type="number" class="form-control mb-1" placeholder="Year 4">
+    <input type="number" class="form-control mb-1" placeholder="Year 5">
+  </div>
+
+  <!-- Expected Increase in Input Cost -->
+  <div class="mb-2">
+    <label>8.2 Expected increase in input cost (%)</label>
+    <input type="number" class="form-control mb-1" placeholder="Year 1">
+    <input type="number" class="form-control mb-1" placeholder="Year 2">
+    <input type="number" class="form-control mb-1" placeholder="Year 3">
+    <input type="number" class="form-control mb-1" placeholder="Year 4">
+    <input type="number" class="form-control mb-1" placeholder="Year 5">
+  </div>
+
+  <!-- Expected Increase in Selling Price -->
+  <div class="mb-2">
+    <label>8.3 Expected increase in selling price (%)</label>
+    <input type="number" class="form-control mb-1" placeholder="Year 1">
+    <input type="number" class="form-control mb-1" placeholder="Year 2">
+    <input type="number" class="form-control mb-1" placeholder="Year 3">
+    <input type="number" class="form-control mb-1" placeholder="Year 4">
+    <input type="number" class="form-control mb-1" placeholder="Year 5">
+  </div>
+
+  <!-- Expected Increase in Salaries/Wages -->
+  <div class="mb-2">
+    <label>8.4 Expected increase in salaries/wages (%)</label>
+    <input type="number" class="form-control mb-1" placeholder="Year 1">
+    <input type="number" class="form-control mb-1" placeholder="Year 2">
+    <input type="number" class="form-control mb-1" placeholder="Year 3">
+    <input type="number" class="form-control mb-1" placeholder="Year 4">
+    <input type="number" class="form-control mb-1" placeholder="Year 5">
+  </div>
+
+  <!-- Other Expenses Growth -->
+  <div class="mb-2">
+    <label>8.5 Other expenses growth (%)</label>
+    <input type="number" class="form-control mb-1" placeholder="Year 1">
+    <input type="number" class="form-control mb-1" placeholder="Year 2">
+    <input type="number" class="form-control mb-1" placeholder="Year 3">
+    <input type="number" class="form-control mb-1" placeholder="Year 4">
+    <input type="number" class="form-control mb-1" placeholder="Year 5">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 9: Infrastructure & Readiness -->
+<div id="section9" class="dpr-section" style="display:none;">
+  <h5>9. Infrastructure & Readiness</h5>
+
+  <!-- Workspace identified -->
+  <div class="mb-2">
+    <label>9.1 Is the workspace/shed identified?</label><br>
+    <input type="radio" name="workspace" value="yes"> Yes
+    <input type="radio" name="workspace" value="no"> No
+  </div>
+
+  <!-- Workspace status -->
+  <div class="mb-2">
+    <label>9.2 Status if yes:</label><br>
+    <input type="radio" name="workspace_status" value="owned"> Owned
+    <input type="radio" name="workspace_status" value="rented"> Rented
+    <input type="radio" name="workspace_status" value="lease"> Lease
+  </div>
+
+  <!-- Monthly rent -->
+  <input type="number" class="form-control mb-2" placeholder="9.3 Monthly rent (if rented)">
+
+  <!-- Electricity availability -->
+  <div class="mb-2">
+    <label>9.4 Is electricity available?</label><br>
+    <input type="radio" name="electricity" value="yes"> Yes
+    <input type="radio" name="electricity" value="no"> No
+    <input type="radio" name="electricity" value="partial"> Partial
+  </div>
+
+  <!-- Water availability -->
+  <div class="mb-2">
+    <label>9.5 Is water available?</label><br>
+    <input type="radio" name="water" value="yes"> Yes
+    <input type="radio" name="water" value="no"> No
+    <input type="radio" name="water" value="partial"> Partial
+  </div>
+
+  <!-- Road access -->
+  <div class="mb-2">
+    <label>9.6 Is the location approachable by road?</label><br>
+    <input type="radio" name="road_access" value="yes"> Yes
+    <input type="radio" name="road_access" value="no"> No
+  </div>
+
+  <!-- Time to start operations -->
+  <input type="number" class="form-control mb-2" placeholder="9.7 Expected time to start operations (months)">
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 10: SWOT Analysis -->
+<div id="section10" class="dpr-section" style="display:none;">
+  <h5>10. SWOT Analysis</h5>
+
+  <!-- Strengths -->
+  <textarea class="form-control mb-2" placeholder="10.1 Strengths (internal advantages)"></textarea>
+
+  <!-- Weaknesses -->
+  <textarea class="form-control mb-2" placeholder="10.2 Weaknesses (internal challenges)"></textarea>
+
+  <!-- Opportunities -->
+  <textarea class="form-control mb-2" placeholder="10.3 Opportunities (external possibilities)"></textarea>
+
+  <!-- Threats -->
+  <textarea class="form-control mb-2" placeholder="10.4 Threats (external risks)"></textarea>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 11: Social & Environmental Impact -->
+<div id="section11" class="dpr-section" style="display:none;">
+  <h5>11. Social & Environmental Impact</h5>
+
+  <!-- Local employment -->
+  <input type="number" class="form-control mb-2" placeholder="11.1 How many local people will get employment?">
+
+  <!-- Youth employment -->
+  <input type="number" class="form-control mb-2" placeholder="11.2 How many youth will be employed/benefitted?">
+
+  <!-- Women employment -->
+  <input type="number" class="form-control mb-2" placeholder="11.3 How many women will be employed/benefitted?">
+
+  <!-- Eco-friendly practices -->
+  <div class="mb-2">
+    <label>11.4 Does your project use any eco-friendly practices?</label><br>
+    <input type="radio" name="eco_friendly" value="yes"> Yes
+    <input type="radio" name="eco_friendly" value="no"> No
+  </div>
+
+  <!-- Eco-friendly description -->
+  <textarea class="form-control mb-2" placeholder="11.5 If yes, describe them"></textarea>
+
+  <!-- Community training -->
+  <div class="mb-2">
+    <label>11.6 Will you provide any training to local community?</label><br>
+    <input type="radio" name="training" value="yes"> Yes
+    <input type="radio" name="training" value="no"> No
+  </div>
+
+  <!-- Training description -->
+  <textarea class="form-control mb-2" placeholder="11.7 If yes, describe the training"></textarea>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 12: Documents Upload -->
+<div id="section12" class="dpr-section" style="display:none;">
+  <h5>12. Documents Upload</h5>
+
+  <!-- Required documents -->
+  <div class="mb-2">
+    <label>12.1 Group photo (Required)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <div class="mb-2">
+    <label>12.2 ID proofs of all members (Required)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <div class="mb-2">
+    <label>12.3 Bank passbook copy (Required)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <div class="mb-2">
+    <label>12.4 Machinery quotation (Required)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <!-- Optional documents -->
+  <div class="mb-2">
+    <label>12.5 Site/location photos (Optional)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <div class="mb-2">
+    <label>12.6 Sample product photos (Optional)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <div class="mb-2">
+    <label>12.7 Any existing licenses (Optional)</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 13: Declaration -->
+<div id="section13" class="dpr-section" style="display:none;">
+  <h5>13. Declaration</h5>
+
+  <div class="mb-2">
+    <label>13.1 Name of declarant</label>
+    <input type="text" class="form-control" placeholder="Enter name">
+  </div>
+
+  <div class="mb-2">
+    <label>13.2 Designation</label>
+    <input type="text" class="form-control" placeholder="Enter designation">
+  </div>
+
+  <div class="mb-2">
+    <label>13.3 Place</label>
+    <input type="text" class="form-control" placeholder="Enter place">
+  </div>
+
+  <div class="mb-2">
+    <label>13.4 Date</label>
+    <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" readonly>
+  </div>
+
+  <div class="mb-2">
+    <label>13.5 Digital signature upload</label>
+    <input type="file" class="form-control">
+  </div>
+
+  <button type="button" class="btn btn-primary next-btn">Next</button>
+</div>
+
+<!-- SECTION 14: KYC -->
+      <div id="section14" class="dpr-section" style="display:none;">
+        <h5>14. KYC & Compliance Details</h5>
+        <select class="form-select mb-2">
+          <option>Aadhaar</option>
+          <option>PAN</option>
+          <option>Voter ID</option>
+          <option>Passport</option>
+          <option>Driving License</option>
+        </select>
+        <input type="text" class="form-control mb-2" placeholder="KYC document number">
+        <input type="file" class="form-control mb-2" placeholder="Upload KYC document">
+        <textarea class="form-control mb-2" placeholder="Permanent address"></textarea>
+        <textarea class="form-control mb-2" placeholder="Current address"></textarea>
+        <div class="mb-2">
+          <label>GST registration (if applicable)?</label><br>
+          <input type="radio" name="gst" value="yes"> Yes
+          <input type="radio" name="gst" value="no"> No
+        </div>
+        <input type="text" class="form-control mb-2" placeholder="GST number">
+        <div class="mb-2">
+          <label>Udyam/MSME registration?</label><br>
+          <input type="radio" name="udyam" value="yes"> Yes
+          <input type="radio" name="udyam" value="no"> No
+        </div>
+        <input type="text" class="form-control mb-2" placeholder="Udyam registration number">
+        <input type="text" class="form-control mb-2" placeholder="PAN of business/entity">
+        <input type="file" class="form-control mb-2" placeholder="Upload PAN copy">
+        <button type="button" class="btn btn-primary next-btn">Next</button>
+      </div>
+
+      <!-- SECTION 15: Credit History -->
+      <div id="section15" class="dpr-section" style="display:none;">
+        <h5>15. Credit History & CIBIL Information</h5>
+        <div class="mb-2">
+          <label>Has the applicant taken a loan before?</label><br>
+          <input type="radio" name="loan_before" value="yes"> Yes
+          <input type="radio" name="loan_before" value="no"> No
+        </div>
+        <select class="form-select mb-2">
+          <option>Personal</option>
+          <option>Business</option>
+          <option>Agriculture</option>
+          <option>Other</option>
+        </select>
+        <input type="text" class="form-control mb-2" placeholder="Lending institution">
+        <input type="number" class="form-control mb-2" placeholder="Loan amount">
+        <input type="number" class="form-control mb-2" placeholder="Current loan outstanding">
+        <input type="number" class="form-control mb-2" placeholder="CIBIL score (if known)">
+        <div class="mb-2">
+          <label>Any loan defaults in past?</label><br>
+          <input type="radio" name="loan_defaults" value="yes"> Yes
+          <input type="radio" name="loan_defaults" value="no"> No
+        </div>
+        <textarea class="form-control mb-2" placeholder="If yes, explain"></textarea>
+        <input type="file" class="form-control mb-2" placeholder="Upload CIBIL report">
+        <button type="submit" class="btn btn-success">Submit DPR</button>
+      </div>
+
+    </form>
+  </main>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.0.0-beta.8/docx.umd.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
